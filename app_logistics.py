@@ -97,44 +97,163 @@ def cerrar_sesion():
     st.session_state.pagina = 'Mi Ruta'
 
 def mostrar_login():
-    """Muestra el formulario de login."""
+    """Muestra el formulario de login con diseño premium Castaño."""
+    
+    # CSS Premium estilo Castaño
     st.markdown("""
     <style>
-    .login-container {
-        max-width: 400px;
-        margin: 100px auto;
-        padding: 40px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    /* Tema oscuro premium */
+    .stApp {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+    }
+    
+    /* Ocultar elementos de Streamlit */
+    #MainMenu, footer, header {visibility: hidden;}
+    
+    /* Contenedor principal */
+    .main .block-container {
+        padding-top: 2rem;
+        max-width: 100%;
+    }
+    
+    /* Tarjetas con glassmorphism */
+    div[data-testid="stForm"] {
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(10px);
+        border-radius: 20px !important;
+        padding: 30px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    /* Inputs grandes y claros */
+    .stTextInput > div > div > input {
+        font-size: 18px !important;
+        padding: 15px 20px !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: white !important;
+    }
+    
+    .stTextInput > div > div > input::placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+    
+    .stTextInput > div > div > input:focus {
+        border-color: #00d4ff !important;
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3) !important;
+    }
+    
+    /* Labels grandes */
+    .stTextInput > label {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        color: #8892b0 !important;
+    }
+    
+    /* Botón principal grande */
+    .stFormSubmitButton > button {
+        background: linear-gradient(90deg, #00d4ff, #7b2cbf) !important;
+        color: white !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        padding: 18px 40px !important;
+        border-radius: 12px !important;
+        border: none !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+    }
+    
+    .stFormSubmitButton > button:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.35) !important;
+    }
+    
+    /* Títulos con gradiente */
+    h1, h2, h3 {
+        color: white !important;
+    }
+    
+    /* Texto general */
+    p, span, div {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+    
+    /* Alertas de error/éxito más visibles */
+    .stAlert {
+        border-radius: 12px !important;
+        font-size: 16px !important;
+        padding: 15px 20px !important;
     }
     </style>
     """, unsafe_allow_html=True)
     
+    # Espaciado superior
+    st.markdown("<br><br>", unsafe_allow_html=True)
+    
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        st.markdown("## 🚚 Castaño Logistics")
-        st.markdown("### Iniciar Sesión")
-        st.markdown("---")
+        # Logo y título con estilo gradiente
+        st.markdown("""
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="
+                font-size: 2.5rem;
+                font-weight: 700;
+                background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 10px;
+            ">🚚 Castaño Logistics</h1>
+            <p style="color: #8892b0; font-size: 1.1rem;">Sistema de Planificación de Rutas</p>
+        </div>
+        """, unsafe_allow_html=True)
         
         with st.form("login_form"):
-            usuario = st.text_input("👤 Usuario", placeholder="Ingrese su usuario")
-            password = st.text_input("🔒 Contraseña", type="password", placeholder="Ingrese su contraseña")
+            st.markdown("<br>", unsafe_allow_html=True)
             
-            col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
-            with col_btn2:
-                submit = st.form_submit_button("Ingresar", use_container_width=True, type="primary")
+            usuario = st.text_input("👤 Usuario", placeholder="Escribe tu usuario aquí")
+            password = st.text_input("🔒 Contraseña", type="password", placeholder="Escribe tu contraseña")
+            
+            st.markdown("<br>", unsafe_allow_html=True)
+            
+            submit = st.form_submit_button("🚀 INGRESAR", use_container_width=True, type="primary")
             
             if submit:
-                if verificar_credenciales(usuario, password):
-                    st.success(f"¡Bienvenido, {st.session_state.usuario['nombre']}!")
-                    st.rerun()
+                if usuario and password:
+                    if verificar_credenciales(usuario, password):
+                        st.success(f"✅ ¡Bienvenido, {st.session_state.usuario['nombre']}!")
+                        st.rerun()
+                    else:
+                        st.error("❌ Usuario o contraseña incorrectos. Intenta de nuevo.")
                 else:
-                    st.error("❌ Usuario o contraseña incorrectos")
+                    st.warning("⚠️ Por favor completa ambos campos")
         
-        st.markdown("---")
-        st.caption("MVP v1.0 - Castaño Chile")
+        # Ayuda visual
+        st.markdown("""
+        <div style="
+            text-align: center; 
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        ">
+            <p style="color: #00d4ff; font-size: 14px; margin: 0;">
+                💡 <strong>¿Olvidaste tu contraseña?</strong><br>
+                <span style="color: #8892b0;">Contacta a tu administrador</span>
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div style="text-align: center; margin-top: 40px; color: #8892b0;">
+            <small>Castaño Chile © 2026 | Versión 1.0</small>
+        </div>
+        """, unsafe_allow_html=True)
 
 # ================================================================
 # CONEXIONES A GCP
@@ -654,33 +773,146 @@ def mostrar_detalle_supervisor():
 # ================================================================
 
 def mostrar_sidebar():
-    """Muestra el sidebar con navegación y logout."""
+    """Muestra el sidebar con navegación premium y logout."""
+    
+    # CSS para sidebar oscuro
+    st.markdown("""
+    <style>
+    /* Sidebar oscuro */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%) !important;
+    }
+    
+    [data-testid="stSidebar"] * {
+        color: white !important;
+    }
+    
+    /* Botones del sidebar grandes */
+    [data-testid="stSidebar"] .stButton > button {
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: white !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        padding: 15px 20px !important;
+        border-radius: 12px !important;
+        margin-bottom: 8px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    [data-testid="stSidebar"] .stButton > button:hover {
+        background: rgba(0, 212, 255, 0.2) !important;
+        border-color: #00d4ff !important;
+        transform: translateX(5px) !important;
+    }
+    
+    [data-testid="stSidebar"] .stButton > button[kind="primary"] {
+        background: linear-gradient(90deg, #00d4ff, #7b2cbf) !important;
+        border: none !important;
+    }
+    
+    [data-testid="stSidebar"] .stButton > button[kind="secondary"] {
+        background: rgba(255, 100, 100, 0.15) !important;
+        border-color: rgba(255, 100, 100, 0.3) !important;
+    }
+    
+    /* Contenido principal con tema oscuro */
+    .stApp > div > div > div > div {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+    
+    /* Headers y texto */
+    h1, h2, h3 {
+        color: white !important;
+    }
+    
+    /* Tarjetas */
+    [data-testid="stMetric"] {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 15px !important;
+        padding: 20px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    [data-testid="stMetricValue"] {
+        color: #00d4ff !important;
+    }
+    
+    /* Tablas */
+    .stDataFrame {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 12px !important;
+    }
+    
+    /* Selectbox */
+    .stSelectbox > div > div {
+        background: rgba(255, 255, 255, 0.08) !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: white !important;
+    }
+    
+    /* Info boxes */
+    .stAlert {
+        background: rgba(0, 212, 255, 0.1) !important;
+        border: 1px solid rgba(0, 212, 255, 0.3) !important;
+        border-radius: 12px !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
     with st.sidebar:
-        st.image("https://via.placeholder.com/150x50?text=Castaño", width=150)
+        # Logo con estilo
+        st.markdown("""
+        <div style="text-align: center; padding: 20px 0;">
+            <h2 style="
+                background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 1.5rem;
+                margin: 0;
+            ">🚚 Castaño</h2>
+        </div>
+        """, unsafe_allow_html=True)
+        
         st.markdown("---")
         
         usuario = st.session_state.usuario
         rol = usuario.get('rol', 'supervisor')
         
-        # Mostrar rol con badge
+        # Tarjeta de usuario con estilo
         rol_emoji = {'zonal': '👔', 'supervisor': '👷', 'admin': '⚙️'}
-        st.markdown(f"**{rol_emoji.get(rol, '👤')} {usuario['nombre']}**")
-        st.caption(f"Rol: {rol.title()}")
+        rol_color = {'zonal': '#00d4ff', 'supervisor': '#00ff88', 'admin': '#7b2cbf'}
         
-        st.markdown("---")
-        st.markdown("### 📍 Navegación")
+        st.markdown(f"""
+        <div style="
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid {rol_color.get(rol, '#00d4ff')};
+        ">
+            <p style="margin: 0; font-size: 18px; font-weight: 600;">
+                {rol_emoji.get(rol, '👤')} {usuario['nombre']}
+            </p>
+            <p style="margin: 5px 0 0 0; font-size: 13px; color: #8892b0;">
+                {rol.upper()}
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
         
-        # Navegación según rol
+        st.markdown("### 📍 Menú")
+        st.markdown("")
+        
+        # Navegación según rol con botones grandes
         if rol in ['zonal', 'admin']:
-            # Zonales y admin pueden gestionar rutas
             if st.button("📋 Gestionar Rutas", use_container_width=True, type="primary"):
                 st.session_state.pagina = 'Gestionar Rutas'
                 st.session_state.supervisor_seleccionado = None
                 st.rerun()
         
         if rol in ['supervisor', 'admin']:
-            # Supervisores ven su ruta
-            if st.button("🗺️ Mi Ruta", use_container_width=True):
+            if st.button("🗺️ Ver Mi Ruta", use_container_width=True):
                 st.session_state.pagina = 'Mi Ruta'
                 st.rerun()
             
@@ -688,14 +920,26 @@ def mostrar_sidebar():
                 st.session_state.pagina = 'Rendir Gastos'
                 st.rerun()
         
+        st.markdown("")
         st.markdown("---")
         
         if st.button("🚪 Cerrar Sesión", use_container_width=True, type="secondary"):
             cerrar_sesion()
             st.rerun()
         
-        st.markdown("---")
-        st.caption("MVP v1.0 | 2026")
+        # Footer
+        st.markdown("""
+        <div style="
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            color: #8892b0;
+            font-size: 12px;
+        ">
+            <p style="margin: 0;">Castaño Logistics v1.0</p>
+            <p style="margin: 5px 0 0 0;">© 2026</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 # ================================================================
 # MAIN
