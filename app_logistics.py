@@ -97,81 +97,132 @@ def cerrar_sesion():
     st.session_state.pagina = 'Mi Ruta'
 
 def mostrar_exito_castano():
-    """Muestra animación de éxito personalizada estilo Castaño."""
+    """Muestra animación de éxito: Checkmark + Croissant giratorio."""
     st.markdown("""
     <style>
-    @keyframes confetti-fall {
-        0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-        100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-    }
-    
-    .confetti-container {
+    /* Contenedor central */
+    .success-container {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(65, 10, 20, 0.3);
         z-index: 9999;
-        overflow: hidden;
+        animation: fade-out 3s ease-out forwards;
     }
     
-    .confetti {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        animation: confetti-fall 3s ease-out forwards;
+    @keyframes fade-out {
+        0%, 80% { opacity: 1; }
+        100% { opacity: 0; pointer-events: none; }
     }
     
-    .confetti-1 { left: 10%; animation-delay: 0s; background: #E1B313; border-radius: 50%; }
-    .confetti-2 { left: 20%; animation-delay: 0.1s; background: #410A14; border-radius: 2px; }
-    .confetti-3 { left: 30%; animation-delay: 0.2s; background: #8DBF2C; border-radius: 50%; }
-    .confetti-4 { left: 40%; animation-delay: 0.15s; background: #E1B313; border-radius: 2px; }
-    .confetti-5 { left: 50%; animation-delay: 0.25s; background: #410A14; border-radius: 50%; }
-    .confetti-6 { left: 60%; animation-delay: 0.1s; background: #8DBF2C; border-radius: 2px; }
-    .confetti-7 { left: 70%; animation-delay: 0.3s; background: #E1B313; border-radius: 50%; }
-    .confetti-8 { left: 80%; animation-delay: 0.05s; background: #410A14; border-radius: 2px; }
-    .confetti-9 { left: 90%; animation-delay: 0.2s; background: #8DBF2C; border-radius: 50%; }
-    .confetti-10 { left: 15%; animation-delay: 0.35s; background: #E1B313; border-radius: 2px; }
-    .confetti-11 { left: 25%; animation-delay: 0.4s; background: #410A14; border-radius: 50%; }
-    .confetti-12 { left: 35%; animation-delay: 0.15s; background: #8DBF2C; border-radius: 2px; }
-    .confetti-13 { left: 45%; animation-delay: 0.25s; background: #E1B313; border-radius: 50%; }
-    .confetti-14 { left: 55%; animation-delay: 0.3s; background: #410A14; border-radius: 2px; }
-    .confetti-15 { left: 65%; animation-delay: 0.1s; background: #8DBF2C; border-radius: 50%; }
-    .confetti-16 { left: 75%; animation-delay: 0.2s; background: #E1B313; border-radius: 2px; }
-    .confetti-17 { left: 85%; animation-delay: 0.35s; background: #410A14; border-radius: 50%; }
-    .confetti-18 { left: 5%; animation-delay: 0.4s; background: #8DBF2C; border-radius: 2px; }
-    .confetti-19 { left: 95%; animation-delay: 0.15s; background: #E1B313; border-radius: 50%; }
-    .confetti-20 { left: 50%; animation-delay: 0.05s; background: #410A14; border-radius: 2px; }
+    /* Tarjeta de éxito */
+    .success-card {
+        background: white;
+        border-radius: 24px;
+        padding: 40px 60px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(65, 10, 20, 0.3);
+        animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    @keyframes pop-in {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+    
+    /* Croissant giratorio */
+    .croissant {
+        font-size: 48px;
+        animation: spin-croissant 1s ease-out;
+        display: inline-block;
+    }
+    
+    @keyframes spin-croissant {
+        0% { transform: rotate(0deg) scale(0.5); }
+        50% { transform: rotate(360deg) scale(1.2); }
+        100% { transform: rotate(360deg) scale(1); }
+    }
+    
+    /* Círculo del checkmark */
+    .checkmark-circle {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        display: inline-block;
+        margin: 20px auto;
+    }
+    
+    .checkmark-circle svg {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .checkmark-circle .circle {
+        stroke: #8DBF2C;
+        stroke-width: 4;
+        fill: none;
+        stroke-dasharray: 251;
+        stroke-dashoffset: 251;
+        animation: draw-circle 0.6s ease-out 0.2s forwards;
+    }
+    
+    @keyframes draw-circle {
+        to { stroke-dashoffset: 0; }
+    }
+    
+    .checkmark-circle .check {
+        stroke: #8DBF2C;
+        stroke-width: 5;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
+        animation: draw-check 0.4s ease-out 0.8s forwards;
+    }
+    
+    @keyframes draw-check {
+        to { stroke-dashoffset: 0; }
+    }
+    
+    /* Texto */
+    .success-text {
+        font-family: 'Poppins', sans-serif;
+        color: #410A14;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 15px;
+        opacity: 0;
+        animation: fade-in-text 0.5s ease-out 1s forwards;
+    }
+    
+    @keyframes fade-in-text {
+        to { opacity: 1; }
+    }
     </style>
     
-    <div class="confetti-container" id="confetti">
-        <div class="confetti confetti-1"></div>
-        <div class="confetti confetti-2"></div>
-        <div class="confetti confetti-3"></div>
-        <div class="confetti confetti-4"></div>
-        <div class="confetti confetti-5"></div>
-        <div class="confetti confetti-6"></div>
-        <div class="confetti confetti-7"></div>
-        <div class="confetti confetti-8"></div>
-        <div class="confetti confetti-9"></div>
-        <div class="confetti confetti-10"></div>
-        <div class="confetti confetti-11"></div>
-        <div class="confetti confetti-12"></div>
-        <div class="confetti confetti-13"></div>
-        <div class="confetti confetti-14"></div>
-        <div class="confetti confetti-15"></div>
-        <div class="confetti confetti-16"></div>
-        <div class="confetti confetti-17"></div>
-        <div class="confetti confetti-18"></div>
-        <div class="confetti confetti-19"></div>
-        <div class="confetti confetti-20"></div>
+    <div class="success-container" id="success-animation">
+        <div class="success-card">
+            <div class="croissant">🥐</div>
+            <div class="checkmark-circle">
+                <svg viewBox="0 0 80 80">
+                    <circle class="circle" cx="40" cy="40" r="38"/>
+                    <polyline class="check" points="25,42 35,52 55,32"/>
+                </svg>
+            </div>
+            <div class="success-text">¡Guardado exitosamente!</div>
+        </div>
     </div>
     
     <script>
         setTimeout(function() {
-            var confetti = document.getElementById('confetti');
-            if (confetti) confetti.remove();
+            var el = document.getElementById('success-animation');
+            if (el) el.remove();
         }, 3500);
     </script>
     """, unsafe_allow_html=True)
