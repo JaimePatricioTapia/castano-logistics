@@ -123,26 +123,26 @@ def mostrar_exito_castano():
         animation: confetti-fall 3s ease-out forwards;
     }
     
-    .confetti-1 { left: 10%; animation-delay: 0s; background: #00d4ff; border-radius: 50%; }
-    .confetti-2 { left: 20%; animation-delay: 0.1s; background: #7b2cbf; border-radius: 2px; }
-    .confetti-3 { left: 30%; animation-delay: 0.2s; background: #00ff88; border-radius: 50%; }
-    .confetti-4 { left: 40%; animation-delay: 0.15s; background: #00d4ff; border-radius: 2px; }
-    .confetti-5 { left: 50%; animation-delay: 0.25s; background: #7b2cbf; border-radius: 50%; }
-    .confetti-6 { left: 60%; animation-delay: 0.1s; background: #00ff88; border-radius: 2px; }
-    .confetti-7 { left: 70%; animation-delay: 0.3s; background: #00d4ff; border-radius: 50%; }
-    .confetti-8 { left: 80%; animation-delay: 0.05s; background: #7b2cbf; border-radius: 2px; }
-    .confetti-9 { left: 90%; animation-delay: 0.2s; background: #00ff88; border-radius: 50%; }
-    .confetti-10 { left: 15%; animation-delay: 0.35s; background: #00d4ff; border-radius: 2px; }
-    .confetti-11 { left: 25%; animation-delay: 0.4s; background: #7b2cbf; border-radius: 50%; }
-    .confetti-12 { left: 35%; animation-delay: 0.15s; background: #00ff88; border-radius: 2px; }
-    .confetti-13 { left: 45%; animation-delay: 0.25s; background: #00d4ff; border-radius: 50%; }
-    .confetti-14 { left: 55%; animation-delay: 0.3s; background: #7b2cbf; border-radius: 2px; }
-    .confetti-15 { left: 65%; animation-delay: 0.1s; background: #00ff88; border-radius: 50%; }
-    .confetti-16 { left: 75%; animation-delay: 0.2s; background: #00d4ff; border-radius: 2px; }
-    .confetti-17 { left: 85%; animation-delay: 0.35s; background: #7b2cbf; border-radius: 50%; }
-    .confetti-18 { left: 5%; animation-delay: 0.4s; background: #00ff88; border-radius: 2px; }
-    .confetti-19 { left: 95%; animation-delay: 0.15s; background: #00d4ff; border-radius: 50%; }
-    .confetti-20 { left: 50%; animation-delay: 0.05s; background: #7b2cbf; border-radius: 2px; }
+    .confetti-1 { left: 10%; animation-delay: 0s; background: #E1B313; border-radius: 50%; }
+    .confetti-2 { left: 20%; animation-delay: 0.1s; background: #410A14; border-radius: 2px; }
+    .confetti-3 { left: 30%; animation-delay: 0.2s; background: #8DBF2C; border-radius: 50%; }
+    .confetti-4 { left: 40%; animation-delay: 0.15s; background: #E1B313; border-radius: 2px; }
+    .confetti-5 { left: 50%; animation-delay: 0.25s; background: #410A14; border-radius: 50%; }
+    .confetti-6 { left: 60%; animation-delay: 0.1s; background: #8DBF2C; border-radius: 2px; }
+    .confetti-7 { left: 70%; animation-delay: 0.3s; background: #E1B313; border-radius: 50%; }
+    .confetti-8 { left: 80%; animation-delay: 0.05s; background: #410A14; border-radius: 2px; }
+    .confetti-9 { left: 90%; animation-delay: 0.2s; background: #8DBF2C; border-radius: 50%; }
+    .confetti-10 { left: 15%; animation-delay: 0.35s; background: #E1B313; border-radius: 2px; }
+    .confetti-11 { left: 25%; animation-delay: 0.4s; background: #410A14; border-radius: 50%; }
+    .confetti-12 { left: 35%; animation-delay: 0.15s; background: #8DBF2C; border-radius: 2px; }
+    .confetti-13 { left: 45%; animation-delay: 0.25s; background: #E1B313; border-radius: 50%; }
+    .confetti-14 { left: 55%; animation-delay: 0.3s; background: #410A14; border-radius: 2px; }
+    .confetti-15 { left: 65%; animation-delay: 0.1s; background: #8DBF2C; border-radius: 50%; }
+    .confetti-16 { left: 75%; animation-delay: 0.2s; background: #E1B313; border-radius: 2px; }
+    .confetti-17 { left: 85%; animation-delay: 0.35s; background: #410A14; border-radius: 50%; }
+    .confetti-18 { left: 5%; animation-delay: 0.4s; background: #8DBF2C; border-radius: 2px; }
+    .confetti-19 { left: 95%; animation-delay: 0.15s; background: #E1B313; border-radius: 50%; }
+    .confetti-20 { left: 50%; animation-delay: 0.05s; background: #410A14; border-radius: 2px; }
     </style>
     
     <div class="confetti-container" id="confetti">
@@ -177,16 +177,26 @@ def mostrar_exito_castano():
     """, unsafe_allow_html=True)
 
 def mostrar_login():
-    """Muestra el formulario de login con diseño premium Castaño."""
+    """Muestra el formulario de login con diseño oficial Castaño."""
     
-    # CSS Premium estilo Castaño
+    # CSS Oficial Castaño (basado en castano.cl)
     st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     
-    /* Tema oscuro premium */
+    /* ============================================
+       PALETA OFICIAL CASTAÑO
+       ============================================
+       Borgoña Oscuro: #410A14
+       Dorado:         #E1B313
+       Crema:          #F2ECE1
+       Verde Acción:   #8DBF2C
+       Texto:          #333333
+    */
+    
+    /* Tema cálido Castaño */
     .stApp {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+        background: linear-gradient(180deg, #F2ECE1 0%, #EDE5D8 100%) !important;
     }
     
     /* Ocultar elementos de Streamlit */
@@ -198,75 +208,86 @@ def mostrar_login():
         max-width: 100%;
     }
     
-    /* Tarjetas con glassmorphism */
+    /* Tarjetas con estilo cálido */
     div[data-testid="stForm"] {
-        background: rgba(255, 255, 255, 0.05) !important;
-        backdrop-filter: blur(10px);
-        border-radius: 20px !important;
-        padding: 30px !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+        background: white !important;
+        border-radius: 24px !important;
+        padding: 40px !important;
+        border: none !important;
+        box-shadow: 0 4px 20px rgba(65, 10, 20, 0.1) !important;
     }
     
     /* Inputs grandes y claros */
     .stTextInput > div > div > input {
-        font-size: 18px !important;
-        padding: 15px 20px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 16px !important;
+        padding: 16px 20px !important;
         border-radius: 12px !important;
-        background: rgba(255, 255, 255, 0.08) !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        color: white !important;
+        background: #F8F5F0 !important;
+        border: 2px solid #E8E0D5 !important;
+        color: #333333 !important;
     }
     
     .stTextInput > div > div > input::placeholder {
-        color: rgba(255, 255, 255, 0.5) !important;
+        color: #999999 !important;
     }
     
     .stTextInput > div > div > input:focus {
-        border-color: #00d4ff !important;
-        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3) !important;
+        border-color: #410A14 !important;
+        box-shadow: 0 0 0 3px rgba(65, 10, 20, 0.1) !important;
     }
     
-    /* Labels grandes */
+    /* Labels */
     .stTextInput > label {
-        font-size: 16px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 14px !important;
         font-weight: 500 !important;
-        color: #8892b0 !important;
+        color: #410A14 !important;
     }
     
-    /* Botón principal grande */
+    /* Botón principal - Verde Castaño */
     .stFormSubmitButton > button {
-        background: linear-gradient(90deg, #00d4ff, #7b2cbf) !important;
+        background: #8DBF2C !important;
         color: white !important;
-        font-size: 18px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 16px !important;
         font-weight: 600 !important;
-        padding: 18px 40px !important;
+        padding: 16px 40px !important;
         border-radius: 12px !important;
         border: none !important;
         transition: all 0.3s ease !important;
         width: 100% !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
     }
     
     .stFormSubmitButton > button:hover {
-        transform: translateY(-3px) !important;
-        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.35) !important;
+        background: #7AAD25 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(141, 191, 44, 0.3) !important;
     }
     
-    /* Títulos con gradiente */
+    /* Títulos */
     h1, h2, h3 {
-        color: white !important;
+        font-family: 'Poppins', sans-serif !important;
+        color: #410A14 !important;
     }
     
     /* Texto general */
-    p, span, div {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    p, span, div, label {
+        font-family: 'Poppins', sans-serif !important;
     }
     
-    /* Alertas de error/éxito más visibles */
+    /* Alertas */
     .stAlert {
         border-radius: 12px !important;
-        font-size: 16px !important;
-        padding: 15px 20px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Success alert */
+    div[data-baseweb="notification"] {
+        background: #E8F5E9 !important;
+        border: 1px solid #8DBF2C !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -277,18 +298,17 @@ def mostrar_login():
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        # Logo y título con estilo gradiente
+        # Logo y título con estilo Castaño oficial
         st.markdown("""
         <div style="text-align: center; margin-bottom: 30px;">
             <h1 style="
-                font-size: 2.5rem;
+                font-family: 'Poppins', sans-serif;
+                font-size: 2.2rem;
                 font-weight: 700;
-                background: linear-gradient(90deg, #00d4ff, #7b2cbf);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                color: #410A14;
                 margin-bottom: 10px;
-            ">🚚 Castaño Logistics</h1>
-            <p style="color: #8892b0; font-size: 1.1rem;">Sistema de Planificación de Rutas</p>
+            ">🥐 Castaño Logistics</h1>
+            <p style="color: #666666; font-size: 1rem; font-family: 'Poppins', sans-serif;">Sistema de Planificación de Rutas</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -318,19 +338,19 @@ def mostrar_login():
             text-align: center; 
             margin-top: 30px;
             padding: 20px;
-            background: rgba(0, 212, 255, 0.1);
+            background: #FFF8E7;
             border-radius: 12px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid #E1B313;
         ">
-            <p style="color: #00d4ff; font-size: 14px; margin: 0;">
+            <p style="color: #410A14; font-size: 14px; margin: 0; font-family: 'Poppins', sans-serif;">
                 💡 <strong>¿Olvidaste tu contraseña?</strong><br>
-                <span style="color: #8892b0;">Contacta a tu administrador</span>
+                <span style="color: #666666;">Contacta a tu administrador</span>
             </p>
         </div>
         """, unsafe_allow_html=True)
         
         st.markdown("""
-        <div style="text-align: center; margin-top: 40px; color: #8892b0;">
+        <div style="text-align: center; margin-top: 40px; color: #888888; font-family: 'Poppins', sans-serif;">
             <small>Castaño Chile © 2026 | Versión 1.0</small>
         </div>
         """, unsafe_allow_html=True)
@@ -853,105 +873,136 @@ def mostrar_detalle_supervisor():
 # ================================================================
 
 def mostrar_sidebar():
-    """Muestra el sidebar con navegación premium y logout."""
+    """Muestra el sidebar con navegación oficial Castaño."""
     
-    # CSS para sidebar oscuro
+    # CSS Sidebar Castaño Oficial
     st.markdown("""
     <style>
-    /* Sidebar oscuro */
+    /* ============================================
+       SIDEBAR CASTAÑO OFICIAL
+       ============================================ */
+    
+    /* Sidebar borgoña */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%) !important;
+        background: linear-gradient(180deg, #410A14 0%, #5A1520 100%) !important;
     }
     
     [data-testid="stSidebar"] * {
         color: white !important;
+        font-family: 'Poppins', sans-serif !important;
     }
     
-    /* Botones del sidebar grandes */
+    /* Botones del sidebar */
     [data-testid="stSidebar"] .stButton > button {
-        background: rgba(255, 255, 255, 0.08) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
         color: white !important;
-        font-size: 16px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 15px !important;
         font-weight: 500 !important;
-        padding: 15px 20px !important;
+        padding: 14px 20px !important;
         border-radius: 12px !important;
         margin-bottom: 8px !important;
         transition: all 0.3s ease !important;
     }
     
     [data-testid="stSidebar"] .stButton > button:hover {
-        background: rgba(0, 212, 255, 0.2) !important;
-        border-color: #00d4ff !important;
+        background: rgba(225, 179, 19, 0.3) !important;
+        border-color: #E1B313 !important;
         transform: translateX(5px) !important;
     }
     
     [data-testid="stSidebar"] .stButton > button[kind="primary"] {
-        background: linear-gradient(90deg, #00d4ff, #7b2cbf) !important;
+        background: #8DBF2C !important;
         border: none !important;
     }
     
-    [data-testid="stSidebar"] .stButton > button[kind="secondary"] {
-        background: rgba(255, 100, 100, 0.15) !important;
-        border-color: rgba(255, 100, 100, 0.3) !important;
+    [data-testid="stSidebar"] .stButton > button[kind="primary"]:hover {
+        background: #7AAD25 !important;
     }
     
-    /* Contenido principal con tema oscuro */
-    .stApp > div > div > div > div {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    [data-testid="stSidebar"] .stButton > button[kind="secondary"] {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
+    }
+    
+    /* Contenido principal tema cálido */
+    .stApp {
+        background: linear-gradient(180deg, #F2ECE1 0%, #EDE5D8 100%) !important;
     }
     
     /* Headers y texto */
     h1, h2, h3 {
-        color: white !important;
+        font-family: 'Poppins', sans-serif !important;
+        color: #410A14 !important;
     }
     
-    /* Tarjetas */
+    /* Tarjetas métricas */
     [data-testid="stMetric"] {
-        background: rgba(255, 255, 255, 0.05) !important;
-        border-radius: 15px !important;
+        background: white !important;
+        border-radius: 16px !important;
         padding: 20px !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border: none !important;
+        box-shadow: 0 2px 12px rgba(65, 10, 20, 0.08) !important;
     }
     
     [data-testid="stMetricValue"] {
-        color: #00d4ff !important;
+        font-family: 'Poppins', sans-serif !important;
+        color: #410A14 !important;
+    }
+    
+    [data-testid="stMetricLabel"] {
+        color: #666666 !important;
     }
     
     /* Tablas */
     .stDataFrame {
-        background: rgba(255, 255, 255, 0.05) !important;
+        background: white !important;
         border-radius: 12px !important;
+        box-shadow: 0 2px 8px rgba(65, 10, 20, 0.06) !important;
     }
     
     /* Selectbox */
     .stSelectbox > div > div {
-        background: rgba(255, 255, 255, 0.08) !important;
+        background: white !important;
         border-radius: 12px !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        color: white !important;
+        border: 2px solid #E8E0D5 !important;
+        color: #333333 !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+    
+    /* Checkboxes */
+    .stCheckbox > label {
+        font-family: 'Poppins', sans-serif !important;
     }
     
     /* Info boxes */
     .stAlert {
-        background: rgba(0, 212, 255, 0.1) !important;
-        border: 1px solid rgba(0, 212, 255, 0.3) !important;
+        background: #FFF8E7 !important;
+        border: 1px solid #E1B313 !important;
         border-radius: 12px !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+    
+    /* Expander */
+    .streamlit-expanderHeader {
+        font-family: 'Poppins', sans-serif !important;
+        color: #410A14 !important;
     }
     </style>
     """, unsafe_allow_html=True)
     
     with st.sidebar:
-        # Logo con estilo
+        # Logo con estilo Castaño oficial
         st.markdown("""
         <div style="text-align: center; padding: 20px 0;">
             <h2 style="
-                background: linear-gradient(90deg, #00d4ff, #7b2cbf);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                font-family: 'Poppins', sans-serif;
+                color: #E1B313;
                 font-size: 1.5rem;
+                font-weight: 700;
                 margin: 0;
-            ">🚚 Castaño</h2>
+            ">🥐 Castaño</h2>
         </div>
         """, unsafe_allow_html=True)
         
@@ -960,22 +1011,22 @@ def mostrar_sidebar():
         usuario = st.session_state.usuario
         rol = usuario.get('rol', 'supervisor')
         
-        # Tarjeta de usuario con estilo
+        # Tarjeta de usuario con estilo Castaño
         rol_emoji = {'zonal': '👔', 'supervisor': '👷', 'admin': '⚙️'}
-        rol_color = {'zonal': '#00d4ff', 'supervisor': '#00ff88', 'admin': '#7b2cbf'}
+        rol_color = {'zonal': '#E1B313', 'supervisor': '#8DBF2C', 'admin': '#410A14'}
         
         st.markdown(f"""
         <div style="
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 20px;
-            border-left: 4px solid {rol_color.get(rol, '#00d4ff')};
+            border-left: 4px solid {rol_color.get(rol, '#E1B313')};
         ">
-            <p style="margin: 0; font-size: 18px; font-weight: 600;">
+            <p style="margin: 0; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif;">
                 {rol_emoji.get(rol, '👤')} {usuario['nombre']}
             </p>
-            <p style="margin: 5px 0 0 0; font-size: 13px; color: #8892b0;">
+            <p style="margin: 5px 0 0 0; font-size: 12px; color: rgba(255,255,255,0.7); font-family: 'Poppins', sans-serif;">
                 {rol.upper()}
             </p>
         </div>
