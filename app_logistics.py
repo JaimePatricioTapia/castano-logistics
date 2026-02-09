@@ -27,6 +27,9 @@ st.set_page_config(
 # ================================================================
 # CONFIGURACIÓN GCP (Modificar según tu proyecto)
 # ================================================================
+# IMPORTANTE: Cambiar a False cuando tengas GCP configurado
+DEMO_MODE = True  # Usar datos demo sin conexión a GCP
+
 GCP_PROJECT = "tu-proyecto-gcp"
 SPANNER_INSTANCE = "logistics-instance"
 SPANNER_DATABASE = "logistics-db"
@@ -139,6 +142,8 @@ def mostrar_login():
 
 def get_spanner_client():
     """Retorna cliente de Spanner. Requiere autenticación GCP."""
+    if DEMO_MODE:
+        return None  # Modo demo - no intentar conexión
     try:
         from google.cloud import spanner
         client = spanner.Client(project=GCP_PROJECT)
@@ -151,6 +156,8 @@ def get_spanner_client():
 
 def get_bigquery_client():
     """Retorna cliente de BigQuery. Requiere autenticación GCP."""
+    if DEMO_MODE:
+        return None  # Modo demo - no intentar conexión
     try:
         from google.cloud import bigquery
         client = bigquery.Client(project=GCP_PROJECT)
