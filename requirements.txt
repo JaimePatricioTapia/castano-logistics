@@ -1,0 +1,5 @@
+streamlit>=1.28.0
+pandas>=1.5.0
+google-cloud-spanner>=3.40.0
+google-cloud-bigquery>=3.11.0
+db-dtypes>=1.1.0
